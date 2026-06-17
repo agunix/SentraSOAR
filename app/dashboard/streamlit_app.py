@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from dashboard.api_client import get_alerts, get_incidents
+from app.dashboard.api_client import get_alerts, get_incidents
 
 st.set_page_config(page_title="SOC Dashboard", layout="wide")
 

@@ -1,5 +1,5 @@
 import requests
-from dashboard.config import API_BASE
+from app.dashboard.config import API_BASE
 
 def get_alerts():
     return requests.get(f"{API_BASE}/alerts").json()
