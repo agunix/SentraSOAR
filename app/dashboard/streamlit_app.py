@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_autorefresh import st_autorefresh
 import pandas as pd
 from app.dashboard.api_client import get_alerts, get_incidents
 
@@ -7,10 +8,10 @@ st.set_page_config(page_title="SOC Dashboard", layout="wide")
 st.title("🛡️ SOAR SOC Dashboard (MVP)")
 
 # Auto refresh toggle
-auto_refresh = st.sidebar.checkbox("Auto Refresh (5s)", value=True)
-
-if auto_refresh:
-    st.autorefresh(interval=5000, key="refresh")
+#auto_refresh = st.sidebar.checkbox("Auto Refresh (5s)", value=True)
+autorefresh = st.sidebar.checkbox("Auto Refresh (5s)", value=True)
+if autorefresh:
+    st_autorefresh(interval=5000, key="refresh")
 
 # Load data
 alerts = get_alerts()
